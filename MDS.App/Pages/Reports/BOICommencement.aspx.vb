@@ -302,12 +302,24 @@ Public Class BOICommencement
 
             If multiFilter.Trim <> "" Then
 
-                sSQL = sSQL & "And (f.CAR_NUMBER like '" & multiFilter & "%') "
+                sSQL = sSQL & "And ( "
+                sSQL = sSQL & "f.CAR_NUMBER Like '%" & multiFilter & "%' "
+                sSQL = sSQL & "Or f.PO_NUMBER Like '%" & multiFilter & "%' "
+                sSQL = sSQL & "Or a.description Like '%" & multiFilter & "%' "
+                sSQL = sSQL & "Or d.asset_tag Like '%" & multiFilter & "%' "
+                sSQL = sSQL & "Or d.serial_no Like '%" & multiFilter & "%' "
+                sSQL = sSQL & "Or d.equipment_id Like '%" & multiFilter & "%' "
+                sSQL = sSQL & "Or b.ship_from Like '%" & multiFilter & "%' "
+                sSQL = sSQL & "Or a.invoice_number Like '%" & multiFilter & "%' "
+                sSQL = sSQL & "Or a.document_number Like '%" & multiFilter & "%' "
+                sSQL = sSQL & "Or b.job_number Like '%" & multiFilter & "%' "
+                sSQL = sSQL & ") "
+
 
             End If
 
             'If invoiceNo.Trim <> "" Then
-            '    sSQL = sSQL & "AND a.INVOICE_NUMBER = '" & invoiceNo & "' "
+            '    sSQL = sSQL & "And a.INVOICE_NUMBER = '" & invoiceNo & "' "
             'End If
 
             'If desc.Trim <> "" Then
