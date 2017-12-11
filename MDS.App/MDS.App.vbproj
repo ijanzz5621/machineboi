@@ -180,6 +180,7 @@
     <Content Include="Pages\Reports\MachineScrap.aspx" />
     <Content Include="Pages\Reports\MachineInspection.aspx" />
     <Content Include="Pages\Reports\BOICommencement.aspx" />
+    <Content Include="Pages\Reports\SummaryByEquipmentType.aspx" />
     <Content Include="Pages\Setup\BOI.aspx" />
     <Content Include="Pages\Setup\BOIList.aspx" />
     <Content Include="Pages\Setup\InvoiceInfo.aspx" />
@@ -202,6 +203,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\Microchip_logo.psd" />
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="My Project\PublishProfiles\MDS Publish.pubxml" />
     <Content Include="Report.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -398,6 +400,13 @@
     </Compile>
     <Compile Include="Pages\Reports\BOICommencement.aspx.vb">
       <DependentUpon>BOICommencement.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Reports\SummaryByEquipmentType.aspx.designer.vb">
+      <DependentUpon>SummaryByEquipmentType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Reports\SummaryByEquipmentType.aspx.vb">
+      <DependentUpon>SummaryByEquipmentType.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Pages\Setup\BOI.aspx.designer.vb">
