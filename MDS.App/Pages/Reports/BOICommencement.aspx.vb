@@ -303,16 +303,16 @@ Public Class BOICommencement
             If multiFilter.Trim <> "" Then
 
                 sSQL = sSQL & "And ( "
-                sSQL = sSQL & "f.CAR_NUMBER Like '%" & multiFilter & "%' "
-                sSQL = sSQL & "Or f.PO_NUMBER Like '%" & multiFilter & "%' "
-                sSQL = sSQL & "Or a.description Like '%" & multiFilter & "%' "
-                sSQL = sSQL & "Or d.asset_tag Like '%" & multiFilter & "%' "
-                sSQL = sSQL & "Or d.serial_no Like '%" & multiFilter & "%' "
-                sSQL = sSQL & "Or d.equipment_id Like '%" & multiFilter & "%' "
-                sSQL = sSQL & "Or b.ship_from Like '%" & multiFilter & "%' "
-                sSQL = sSQL & "Or a.invoice_number Like '%" & multiFilter & "%' "
-                sSQL = sSQL & "Or a.document_number Like '%" & multiFilter & "%' "
-                sSQL = sSQL & "Or b.job_number Like '%" & multiFilter & "%' "
+                sSQL = sSQL & "UPPER(f.CAR_NUMBER) Like '%" & multiFilter.ToUpper & "%' "
+                sSQL = sSQL & "Or UPPER(f.PO_NUMBER) Like '%" & multiFilter.ToUpper & "%' "
+                sSQL = sSQL & "Or UPPER(a.description) Like '%" & multiFilter.ToUpper & "%' "
+                sSQL = sSQL & "Or UPPER(d.asset_tag) Like '%" & multiFilter.ToUpper & "%' "
+                sSQL = sSQL & "Or UPPER(d.serial_no) Like '%" & multiFilter.ToUpper & "%' "
+                sSQL = sSQL & "Or UPPER(d.equipment_id) Like '%" & multiFilter.ToUpper & "%' "
+                sSQL = sSQL & "Or UPPER(b.ship_from) Like '%" & multiFilter.ToUpper & "%' "
+                sSQL = sSQL & "Or UPPER(a.invoice_number) Like '%" & multiFilter.ToUpper & "%' "
+                sSQL = sSQL & "Or UPPER(a.document_number) Like '%" & multiFilter.ToUpper & "%' "
+                sSQL = sSQL & "Or UPPER(b.job_number) Like '%" & multiFilter.ToUpper & "%' "
                 sSQL = sSQL & ") "
 
 
