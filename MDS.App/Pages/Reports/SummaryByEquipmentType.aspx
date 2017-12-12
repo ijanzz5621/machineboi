@@ -35,4 +35,55 @@
 
     </div>
 
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <table id="table-listing">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#<%=btnSearch.ClientID%>').on('click', function (e) {
+
+                e.preventDefault();
+
+                loadReport();
+
+            });
+
+        });
+
+        function loadReport() {
+
+            //alert('Loading report....');
+            $.ajax({
+                url: "SummaryByEquipmentType.aspx/GetListing",
+                data: "{ 'boiNumber': '', 'equipmentType': '', 'statusCode': ''}",
+                dataType: "json",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    alert(data.d);
+                },
+                error: function (a, b, c) {
+                    console.log('error: ' + JSON.stringify(a));
+                }
+            });
+
+        }
+
+
+
+    </script>
+
 </asp:Content>
